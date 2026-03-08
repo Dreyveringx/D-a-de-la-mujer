@@ -261,6 +261,7 @@
     font-family: 'Lato', sans-serif;
     font-weight: 100;
     font-size: 0.65rem;
+    margin-top: 10px;
     letter-spacing: 0.35em;
     color: var(--gold);
     text-transform: uppercase;
