@@ -1,0 +1,293 @@
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --rose: #c2185b;
+    --rose-light: #f48fb1;
+    --rose-pale: #fce4ec;
+    --gold: #c9a84c;
+    --gold-light: #f0d080;
+    --cream: #fff8f0;
+    --dark: #3b1a2a;
+  }
+
+  html, body {
+    min-height: 100vh;
+    background: var(--cream);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    overflow-x: hidden;
+  }
+
+  /* Animated petal background */
+  .bg-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .petal {
+    position: absolute;
+    top: -60px;
+    font-size: 1.4rem;
+    animation: fall linear infinite;
+    opacity: 0.6;
+  }
+
+  @keyframes fall {
+    0%   { transform: translateY(-60px) rotate(0deg) translateX(0); opacity: 0; }
+    10%  { opacity: 0.6; }
+    90%  { opacity: 0.4; }
+    100% { transform: translateY(110vh) rotate(720deg) translateX(40px); opacity: 0; }
+  }
+
+  /* Mesh gradient overlay */
+  .bg-gradient {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 10% 20%, rgba(194,24,91,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 60% at 90% 80%, rgba(201,168,76,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 80% 40% at 50% 50%, rgba(244,143,177,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Main wrapper */
+  .wrapper {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  /* Decorative top line */
+  .deco-line {
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin-bottom: 1.2rem;
+    animation: fadeIn 1.5s ease forwards;
+  }
+
+  .date-tag {
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1.8rem;
+    animation: fadeIn 1.8s ease forwards;
+  }
+
+  /* Title */
+  .title-block {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    animation: slideUp 1.4s ease forwards;
+  }
+
+  .title-small {
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    font-size: 0.72rem;
+    letter-spacing: 0.4em;
+    color: var(--rose);
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+
+  .title-main {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
+    font-weight: 400;
+    color: var(--dark);
+    line-height: 1.15;
+  }
+
+  .title-main em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  /* Rose icon center */
+  .rose-center {
+    font-size: 2.8rem;
+    margin: 0.5rem 0 2rem;
+    animation: pulse 3s ease-in-out infinite;
+    display: block;
+    text-align: center;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+  }
+
+  /* Poem card */
+  .poem-card {
+    max-width: 560px;
+    width: 100%;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 2px;
+    padding: 3rem 2.5rem;
+    box-shadow:
+      0 4px 40px rgba(194,24,91,0.07),
+      0 1px 8px rgba(0,0,0,0.04),
+      inset 0 0 0 1px rgba(255,255,255,0.8);
+    position: relative;
+    animation: slideUp 1.8s ease forwards;
+  }
+
+  /* Corner ornaments */
+  .poem-card::before, .poem-card::after {
+    content: '✦';
+    position: absolute;
+    color: var(--gold-light);
+    font-size: 0.9rem;
+  }
+  .poem-card::before { top: 0.8rem; left: 1rem; }
+  .poem-card::after  { bottom: 0.8rem; right: 1rem; }
+
+  .poem-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--rose);
+    text-align: center;
+    margin-bottom: 1.8rem;
+    letter-spacing: 0.02em;
+  }
+
+  .poem-body {
+    font-size: clamp(1rem, 2.4vw, 1.12rem);
+    font-weight: 300;
+    color: var(--dark);
+    line-height: 2;
+    text-align: center;
+    font-style: italic;
+  }
+
+  .poem-stanza {
+    margin-bottom: 1.6rem;
+  }
+
+  .poem-stanza:last-child { margin-bottom: 0; }
+
+  .poem-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 1.6rem 0;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+  }
+  .poem-divider::before, .poem-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-light));
+  }
+  .poem-divider::after {
+    background: linear-gradient(90deg, var(--gold-light), transparent);
+  }
+
+  /* Signature */
+  .signature {
+    text-align: center;
+    margin-top: 2.5rem;
+    animation: fadeIn 3s ease forwards;
+  }
+  .signature-line {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 1rem;
+  }
+  .signature-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--rose);
+    letter-spacing: 0.05em;
+  }
+
+  /* CTA button */
+  .cta-wrap {
+    margin-top: 3.5rem;
+    text-align: center;
+    animation: fadeIn 4s ease forwards;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+
+  .cta-btn:hover { transform: translateY(-4px); }
+
+  .cta-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--rose), #880e4f);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 8px 30px rgba(194,24,91,0.35), 0 0 0 6px rgba(194,24,91,0.08);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .cta-btn:hover .cta-icon {
+    box-shadow: 0 12px 40px rgba(194,24,91,0.5), 0 0 0 10px rgba(194,24,91,0.1);
+  }
+
+  .cta-label {
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Bottom deco */
+  .bottom-roses {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    font-size: 2.5rem;
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 0;
+  }
