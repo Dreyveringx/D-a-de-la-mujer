@@ -76,7 +76,7 @@
 
   .date-tag {
     font-family: 'Lato', sans-serif;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 0.7rem;
     letter-spacing: 0.35em;
     color: var(--gold);
@@ -94,7 +94,7 @@
 
   .title-small {
     font-family: 'Lato', sans-serif;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 0.72rem;
     letter-spacing: 0.4em;
     color: var(--rose);
@@ -259,8 +259,8 @@
 
   .cta-label {
     font-family: 'Lato', sans-serif;
-    font-weight: 100;
-    font-size: 0.65rem;
+    font-weight: 300;
+    font-size: 0.75rem;
     margin-top: 10px;
     letter-spacing: 0.35em;
     color: var(--gold);
