@@ -78,6 +78,7 @@
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     font-size: 0.7rem;
+    text-align: center;
     letter-spacing: 0.35em;
     color: var(--gold);
     text-transform: uppercase;
@@ -159,7 +160,7 @@
   .poem-title {
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    font-size: 1.15rem;
+    font-size: 1.5rem;
     color: var(--rose);
     text-align: center;
     margin-bottom: 1.8rem;
@@ -169,6 +170,7 @@
   .poem-body {
     font-size: clamp(1rem, 2.4vw, 1.12rem);
     font-weight: 300;
+    font-size: 18px;
     color: var(--dark);
     line-height: 2;
     text-align: center;
