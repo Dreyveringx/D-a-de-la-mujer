@@ -499,9 +499,9 @@
             display: flex;
             align-items: center;
             gap: 0.8rem;
-            background: rgba(26, 10, 18, 0.85);
+            background: rgba(26, 10, 18, 0.0.25);
             backdrop-filter: blur(16px);
-            border: 1px solid rgba(201, 168, 76, 0.25);
+            border: 1px solid rgba(201, 168, 76, 0.45);
             border-radius: 50px;
             padding: 0.6rem 1.2rem 0.6rem 0.7rem;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
