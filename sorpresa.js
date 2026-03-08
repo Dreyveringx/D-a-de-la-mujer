@@ -72,7 +72,7 @@
             obs.observe(f);
         });
         // ── Lightbox ──
-        const captions = ['Siempre contigo ✦', 'Momentos únicos ✦', 'Mi mundo ✦'];
+        const captions = ['Siempre contigo ✦', 'Mi mundo ✦', 'Momentos únicos ✦'];
         let lbIndex = 0;
         let lbImages = [];
 
